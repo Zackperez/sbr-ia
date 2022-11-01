@@ -1,0 +1,142 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;400;700&display=swap');
+@import url(normalize.css);
+
+:root {
+    --BGCOLOR: #16161D;
+    --COLOR_BLACK: #131417;
+    /* morado  color: #6C63FF*/
+}
+
+* {
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: var(--BGCOLOR);
+    color:white;
+}
+
+.page {
+    display: grid;
+    grid-template-rows: auto 1fr 1fr;
+    grid-template-areas:
+        "menu"
+        "home_page"
+        "apps";
+}
+
+.apps{
+    display: grid;
+    grid-area: apps;
+}
+
+/* Organizacion de secciones */
+
+.menu {
+    display: grid;
+    grid-area: menu;
+    margin-bottom: 20px;
+}
+
+.homePage {
+    /* border: 5px solid black;*/
+    display: grid;
+    grid-area: home_page;
+    width: 100%;
+
+}
+
+/* Modificaciones */
+
+/* menu */
+
+.menu__contenido {
+    display: flex;
+    justify-content: end;
+    list-style: none;
+    height: 70px;
+    align-items: center;
+    margin: 0px;
+    background-color: var(--COLOR_BLACK);
+}
+
+.menu__contenido-item {
+    padding-left: 15px;
+    text-align: center;
+}
+
+.menu__contenido-item a {
+    text-decoration: none;
+    color: white;
+    font-size: 1.2em;
+    font-weight: 500;
+    letter-spacing: 2px;
+    padding: 0px 10px 5px 10px;
+}
+
+.menu__contenido-item a:hover {
+    /* border-bottom: 2px solid #000; */
+    color: antiquewhite;
+}
+
+/* homePage */
+
+.homePage__content {
+    display: grid;
+    grid-template-areas:
+        "text img"
+        "text img"
+        "wave wave";
+    grid-template-columns: 1fr 0.8fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    row-gap: 30px;
+}
+
+.homePage__content-text {
+    display: grid;
+    grid-area: text;
+    text-align: center;
+    align-items: center;
+}
+
+.homePage__content-text-title {
+    font-size: 60px;
+    font-weight: bold;
+}
+
+.homePage__content-text-description {
+    font-size: 17px;
+    letter-spacing: 1.5px;
+}
+
+.homePage__content-img {
+    display: grid;
+    grid-area: img;
+    justify-items: center;
+    text-align: center;
+    align-items: center;
+}
+
+.img-index {
+    width: 80%;
+    height: auto;
+}
+
+.ola{
+    display: grid;
+    grid-area: wave;
+	height: 25vh;
+	width: 100%;
+    position: absolute;
+    bottom: 0;
+}
+
+@media only screen and (max-width: 600px) {
+
+    .ola{
+        height: 10vh;
+        width: 100%;
+    }
+}
