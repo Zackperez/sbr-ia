@@ -20,15 +20,13 @@ body {
 
 .page {
     display: grid;
-    grid-template-rows: auto 1fr 1fr 0.5fr;
+    grid-template-rows: auto 1fr 0.7fr 0.4fr;
     grid-template-areas:
         "menu"
         "home_page"
         "apps"
         "footer";
 }
-
-
 
 /* Organizacion de secciones */
 
@@ -43,7 +41,6 @@ body {
     display: grid;
     grid-area: home_page;
     width: 100%;
-
 }
 
 .apps{
@@ -138,6 +135,7 @@ body {
 }
 
 .ola{
+    height: 100%;
     width: 100%;
     /* 
             .wave{
@@ -158,59 +156,55 @@ body {
 .apps__contenido{
     text-align: center;
     background-color: white;
-    
+}
+
+.apps__contenido h1{
+    color:#131417
 }
 
 .apps__contenido-aplicaciones{
-    margin-left: 100px;
-    margin-right: 100px;
+    margin-left: 300px;
+    margin-right: 300px;
     text-align: center;
     display: grid;
     grid-template-areas:
     "aplicacion1 aplicacion2";
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr;
-    column-gap: 20px;
+    column-gap: 30px;
 }
 
-.apps__contenido-aplicacion-1{
+.apps__contenido-aplicaciones-1{
     grid-area: aplicacion1;
+
+}
+
+.apps__contenido-aplicaciones-2{
+    grid-area: aplicacion2;
+}
+
+.card{
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: space-evenly;
     background-color: var(--COLOR_BLACK);
     border: 1px solid black;
     border-radius: 5px;
     height: 50vh;
 }
 
-.apps__contenido-aplicacion-1:hover{
-    /* */
-}
-
-.apps__contenido-aplicacion-1__titulo{
+.card-title{
     padding: 0px 30px 0px 30px;
     font-size: 3vh;
 }
 
-
-.apps__contenido-aplicacion-1__descripcion{
+.card-description{
     padding: 0px 30px 0px 30px;
     font-size: 1.8vh;
     letter-spacing: 1px;
     font-weight: 300;
 }
 
-.apps__contenido-aplicacion-2{
-    grid-area: aplicacion2;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    background-color: var(--COLOR_BLACK);
-    border: 1px solid black;
-    border-radius: 5px;
-    height: 50vh;
-}
 
 
 /* CSS */
@@ -226,7 +220,7 @@ body {
   height: 44px;
   line-height: 1.15;
   text-align: center;
-  width: 20%;
+  width: 30vh;
 }
 
 
