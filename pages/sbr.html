@@ -24,7 +24,12 @@
         </nav>
 
         <div class="page__information">
-            <p>Antes de iniciar, podrías leer un poco acerca de la enfermadad del sistema digestivo, te podría ayudar a identificar mejor las causas (en caso de tenerlas)</p>
+            <p>Antes de iniciar, podrías leer un poco acerca de la enfermadad del sistema digestivo, te podría ayudar a identificar mejor las causas (en caso de tenerlas)</p><br>
+            <h1>Sistema Digestivo</h1>
+            <p>Las enfermedades digestivas son trastornos del aparato digestivo, que algunas veces se denomina tracto gastrointestinal (GI).
+                En la digestión, el alimento y las bebidas se descomponen en pequeñas partes (llamadas nutrientes) que el cuerpo puede absorber y usar como energía y pilares fundamentales para las células.
+                El aparato digestivo está compuesto por el esófago (tubo de alimento), el estómago, los intestinos grueso y delgado, el hígado, el páncreas y la vesícula biliar. <br>
+                Una enfermedad digestiva es cualquier problema de salud que ocurre en el aparato digestivo. Las afecciones pueden ir de leves a graves. Algunos problemas comunes incluyen acidez gástrica, cáncer, síndrome del intestino irritable e intolerancia a la lactosa.</p>
         </div>
 
         <div class="page__process">
@@ -36,26 +41,26 @@
                     <form>
                         <div class="formulario">
                             <div class="form-floating mb-3">
-                                <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
-                                <label for="floatingInput">Pregunta 1</label>
+                                <input type="text" class="form-control" id="pregunta_abdominal" placeholder="name@example.com">
+                                <label for="floatingInput">¿Haz tenido dolor abdominal</label>
                             </div>
                             <div class="form-floating mb-3">
-                                <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
-                                <label for="floatingInput">Pregunta 2</label>
+                                <input type="text" class="form-control" id="pregunta_diarrea" placeholder="Password">
+                                <label for="floatingInput">¿Haz tenido diarrea?</label>
                             </div>
                             <div class="form-floating mb-3">
-                                <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
-                                <label for="floatingInput">Pregunta 3</label>
+                                <input type="text" class="form-control" id="pregunta_estrenimiento" placeholder="Password">
+                                <label for="floatingInput">¿Haz tenido estreñimiento</label>
                             </div>
                             <div class="form-floating mb-3">
-                                <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
-                                <label for="floatingInput">Pregunta 4</label>
+                                <input type="text" class="form-control" id="pregunta_acidez" placeholder="Password">
+                                <label for="floatingInput">¿Haz tenido acidez estomacal?</label>
                             </div>
                             <div class="form-floating mb-3">
-                                <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
-                                <label for="floatingInput">Pregunta 5</label>
+                                <input type="text" class="form-control" id="pregunta_vomitos" placeholder="Password">
+                                <label for="floatingInput">¿Haz tenido vómitos?</label>
                             </div>
-                            <button type="submit" class="btn btn-primary">Submit</button>
+                            <a id="boton_prueba" class="btn btn-primary">Realizar prueba</a>
                         </div>
 
                       </form>
@@ -75,6 +80,8 @@
 
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+
+    <script src="/js/sbr.js"> </script>
 
 </body>
 </html>
