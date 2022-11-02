@@ -20,7 +20,7 @@ body {
 
 .page {
     display: grid;
-    grid-template-rows: auto 1fr 0.7fr 0.4fr;
+    grid-template-rows: auto 1fr 1fr 0.3fr;
     grid-template-areas:
         "menu"
         "home_page"
@@ -40,7 +40,6 @@ body {
     /* border: 5px solid black;*/
     display: grid;
     grid-area: home_page;
-    width: 100%;
 }
 
 .apps{
@@ -59,12 +58,12 @@ body {
 
 .menu__contenido {
     display: flex;
-    justify-content: end;
+    justify-content: center;
     list-style: none;
     height: 70px;
     align-items: center;
     margin: 0px;
-    background-color: var(--COLOR_BLACK);
+    background-color: beige;
 }
 
 .menu__contenido-item {
@@ -74,8 +73,8 @@ body {
 
 .menu__contenido-item a {
     text-decoration: none;
-    color: white;
-    font-size: 1.2em;
+    color: var(--BGCOLOR);
+    font-size: 3vh;
     font-weight: 500;
     letter-spacing: 2px;
     padding: 0px 10px 5px 10px;
@@ -83,7 +82,7 @@ body {
 
 .menu__contenido-item a:hover {
     /* border-bottom: 2px solid #000; */
-    color: antiquewhite;
+    border-bottom: 2px solid #000;
 }
 
 /* homePage */
@@ -107,13 +106,18 @@ body {
 }
 
 .homePage__content-text-title {
-    font-size: 60px;
+    font-size: 10vh;
     font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .homePage__content-text-description {
-    font-size: 17px;
+    padding: 0px 50px 0px 50px;
+    font-size: 3vh;
     letter-spacing: 1.5px;
+
 }
 
 .homePage__content-img {
@@ -135,7 +139,7 @@ body {
 }
 
 .ola{
-    height: 100%;
+    height: 15vh;
     width: 100%;
     /* 
             .wave{
@@ -163,14 +167,15 @@ body {
 }
 
 .apps__contenido-aplicaciones{
-    margin-left: 300px;
-    margin-right: 300px;
+    margin-left: 150px;
+    margin-right: 150px;
     text-align: center;
     display: grid;
     grid-template-areas:
+    "titulo titulo"
     "aplicacion1 aplicacion2";
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr;
+    grid-template-rows: 1fr 0.2fr;
     column-gap: 30px;
 }
 
@@ -182,6 +187,14 @@ body {
 .apps__contenido-aplicaciones-2{
     grid-area: aplicacion2;
 }
+.apps__contenido-titulo{
+    grid-area: titulo;
+}
+
+
+.apps__contenido-h1{
+    font-size: 10vh;
+}
 
 .card{
     display: flex;
@@ -190,7 +203,7 @@ body {
     background-color: var(--COLOR_BLACK);
     border: 1px solid black;
     border-radius: 5px;
-    height: 50vh;
+    height: 60vh;
 }
 
 .card-title{
@@ -200,7 +213,7 @@ body {
 
 .card-description{
     padding: 0px 30px 0px 30px;
-    font-size: 1.8vh;
+    font-size: 2.5vh;
     letter-spacing: 1px;
     font-weight: 300;
 }
@@ -221,6 +234,45 @@ body {
   line-height: 1.15;
   text-align: center;
   width: 30vh;
+}
+
+.footer{
+    align-content: center;
+    justify-content: center;
+    text-align: center;
+    
+}
+
+.footer__contenido{
+    display: grid;
+    grid-template-areas: 
+    "otras redes direccion"
+    "creador creador creador";
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto auto;
+    align-items: center;
+    column-gap: 30vh;
+    row-gap: 3vh;
+}
+
+.footer__contenido-redes_sociales{
+    grid-area: redes;
+}
+
+.footer__contenido-otras_redes{
+    grid-area: otras;
+}
+
+.footer__contenido-direccion{
+    grid-area: direccion;
+}
+
+.footer__contenido-creador{
+    grid-area: creador;
+}
+
+.link{
+    cursor:pointer;
 }
 
 
