@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', function(){
     const boton_prueba = document.getElementById("boton_prueba");
 
-    /*function add_question(){
+    function new_question(){
         const abdominal = document.getElementById("pregunta_abdominal").value;
         const diarrea = document.getElementById("pregunta_diarrea").value;
         const estrenimiento = document.getElementById("pregunta_estrenimiento").value;
@@ -9,13 +9,49 @@ document.addEventListener('DOMContentLoaded', function(){
         const vomito = document.getElementById("pregunta_vomitos").value;
         
         const respuestas_preguntas = {
-            respuesta_1: abdominal,
-            respuesta_2: diarrea,
-            respuesta_3: estrenimiento,
-            respuesta_4: acidez,
-            respuesta_5: vomito
+            Respuesta_1: abdominal,
+            Respuesta_2: diarrea,
+            Respuesta_3: estrenimiento,
+            Respuesta_4: acidez,
+            Respuesta_5: vomito
         }
-    }*/
+        axios({
+            method: "POST",
+            url: "http://localhost:4000/add_contact",
+            data: respuestas_preguntas,
+        })
+        .then(res => console.log(res))
+        .catch(err => console.log('Error:',err))
+    }
+
+    function new_user(){
+        const Respuesta_usuario = document.getElementById("respuesta_usuario").value;
+        const Respuesta_apellido = document.getElementById("respuesta_apellido").value;
+        const Respuesta_abdominal = document.getElementById("respuesta_abdominal").value;
+        const Respuesta_diarrea = document.getElementById("respuesta_diarrea").value;
+        const Respuesta_estrenimiento = document.getElementById("respuesta_estrenimiento").value;
+        const Respuesta_acidez = document.getElementById("respuesta_acidez").value;
+        const Respuesta_vomitos = document.getElementById("respuesta_vomitos").value;
+
+        const respuestas_preguntas = {
+            Nombre: Respuesta_usuario,
+            Apellido: Respuesta_apellido,
+            Respuesta_abdominal: Respuesta_abdominal,
+            Respuesta_diarrea: Respuesta_diarrea,
+            Respuesta_estrenimiento: Respuesta_estrenimiento,
+            Respuesta_acidez: Respuesta_acidez,
+            Respuesta_vomitos: Respuesta_vomitos
+        }
+        axios({
+            method: "POST",
+            url: "http://localhost:4000/agregar_usuario_temporal",
+            data: respuestas_preguntas,
+        })
+        .then(res => console.log(res))
+        .catch(err => console.log('Error:',err))
+    }
+
+
 
     function getAll(){
         axios.get('http://localhost:4000/get_user_info')
@@ -25,13 +61,13 @@ document.addEventListener('DOMContentLoaded', function(){
         .catch(function(error) {
             console.log(error);
         });
-
     }
+
 
 
     
     boton_prueba.onclick = function(){
-        getAll();
+        new_user();
     }
 
 
