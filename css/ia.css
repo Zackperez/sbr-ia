@@ -1,0 +1,64 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --BGCOLOR: #16161D;
+    --COLOR_BLACK: #131417;
+    /* morado  color: #6C63FF*/
+}
+
+.Pagina{
+    display: grid;
+    grid-template-areas: 
+    "menu"
+    "procesos";
+}
+
+.menu{
+    grid-area: menu;
+}
+
+.menu__contenido {
+    display: flex;
+    justify-content: end;
+    list-style: none;
+    height: 10vh;
+    align-items: center;
+    margin: 0px;
+    background-color: var(--BGCOLOR);
+}
+
+.menu__contenido-item {
+    padding-left: 15px;
+    text-align: center;
+}
+
+.menu__contenido-item a {
+    text-decoration: none;
+    color: white;
+    font-size: 1.2em;
+    font-weight: 500;
+    letter-spacing: 2px;
+    padding: 0px 10px 5px 10px;
+}
+
+.menu__contenido-item a:hover {
+    /* border-bottom: 2px solid #000; */
+    color: antiquewhite;
+}
+
+.page__information{
+    grid-area: procesos;
+}
+
+.page__container{
+    display: grid;
+    height: 90vh;
+    grid-template-areas: "imagen procesos";
+    justify-content: center;
+    align-items: center;
+    column-gap: 20px;
+}
