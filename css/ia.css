@@ -1,13 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;400;700&display=swap');
+@import url(normalize.css);
+
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
 }
 
 :root {
     --BGCOLOR: #16161D;
     --COLOR_BLACK: #131417;
     /* morado  color: #6C63FF*/
+}
+
+
+body {
+    color:var(--BGCOLOR);
 }
 
 .Pagina{
@@ -24,12 +33,12 @@
 
 .menu__contenido {
     display: flex;
-    justify-content: end;
+    justify-content: start;
     list-style: none;
-    height: 10vh;
+    height: 8vh;
     align-items: center;
     margin: 0px;
-    background-color: var(--BGCOLOR);
+    background-color: beige;
 }
 
 .menu__contenido-item {
@@ -39,21 +48,20 @@
 
 .menu__contenido-item a {
     text-decoration: none;
-    color: white;
+    color: var(--BGCOLOR);
     font-size: 3vh;
-    font-weight: 400;
+    font-weight: 500;
     letter-spacing: 2px;
     padding: 0px 10px 5px 10px;
 }
-
+/*
 .menu__contenido-item a:hover {
-    /* border-bottom: 2px solid #000; */
-    color: antiquewhite;
+     border-bottom: 2px solid #000; 
+    border-bottom: 2px solid #000;
 }
-
+*/
 .page__information{
     grid-area: procesos;
-
 }
 
 .page__container{
@@ -64,7 +72,6 @@
     grid-template-rows: 1fr;
     justify-content: center;
     align-items: center;
-    border: 2px solid black;
     padding: 10vh;
     column-gap: 50px;
 }
