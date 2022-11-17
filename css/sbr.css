@@ -28,14 +28,16 @@
     height: 85vh;
 }
 
-.page__process{
-    grid-area: formulario;
-}
-
 .page__process-content{
     grid-template-areas: 
     "formulario"
     "resultados";
+}
+
+.page__process{
+    display: grid;
+    grid-area: formulario;
+    align-items: center;
 }
 
 .menu{
@@ -69,7 +71,6 @@
 }
 
 .menu__contenido-item a:hover {
-    /* border-bottom: 2px solid #000; */
     color: antiquewhite;
 }
 
