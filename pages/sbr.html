@@ -17,8 +17,8 @@
         <nav class="menu">
             <ul class="menu__contenido">
                 <li class="menu__contenido-item"><a href="/index.html">Inicio</a></li>
-                <li class="menu__contenido-item"><a href="">SBR</a></li>
-                <li class="menu__contenido-item"><a href="">Inteligencia Artificial</a></li>
+                <li class="menu__contenido-item"><a href="sbr.html">SBR</a></li>
+                <li class="menu__contenido-item"><a href="ia.html">Inteligencia Artificial</a></li>
                 <li class="menu__contenido-item"><a href="">Acerca de mi</a></li>
             </ul>
         </nav>
@@ -66,6 +66,10 @@
                     <form>
                         <div class="formulario">
                             <div class="form-floating mb-3">
+                                <input type="text" class="form-control" id="id_usuario" placeholder="name@example.com">
+                                <label for="floatingInput">identificacion</label>
+                            </div>
+                            <div class="form-floating mb-3">
                                 <input type="text" class="form-control" id="respuesta_usuario" placeholder="name@example.com">
                                 <label for="floatingInput">Nombre de usuario</label>
                             </div>
@@ -90,20 +94,25 @@
                                 <label for="floatingInput">¿Haz tenido acidez estomacal?</label>
                             </div>
                             <div class="form-floating mb-3">
-                              <!--   <input type="text" class="form-control" id="respuesta_vomitos" placeholder="Password">
-                                <label for="floatingInput">Veces vómitadas esta semana xd</label>-->
-                                <select class="form-select" aria-label="Default select example">
+                              <input type="text" class="form-control" id="respuesta_vomitos" placeholder="Password">
+                                <label for="floatingInput">¿Haz tenido vomitos?</label>
+                               <!--  <select class="form-select" aria-label="Default select example">
                                     <option selected>Veces vomitadas esta semana xd</option>
                                     <option value="1">1 a 2</option>
                                     <option value="2">2 a 3</option>
-                                  </select>
+                                  </select>-->
                             </div>
                             <a id="boton_prueba" class="btn btn-primary">Realizar prueba</a>
+
+                            <input type="text" class="form-control" id="buscar_id" placeholder="Password">
+                            <label for="floatingInput">Digita tu identificacion</label>
+                            <a id="boton_resultados" class="btn btn-primary">Mostrar resultados</a>
+
                         </div>
                       </form>
                 </div>    
         
-                <div class="resultados">
+                <div id="resultados_finales" class="resultados">
                     <h1>resultados</h1>
                 </div>            
 

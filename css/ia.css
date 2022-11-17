@@ -15,6 +15,7 @@
     grid-template-areas: 
     "menu"
     "procesos";
+
 }
 
 .menu{
@@ -39,8 +40,8 @@
 .menu__contenido-item a {
     text-decoration: none;
     color: white;
-    font-size: 1.2em;
-    font-weight: 500;
+    font-size: 3vh;
+    font-weight: 400;
     letter-spacing: 2px;
     padding: 0px 10px 5px 10px;
 }
@@ -52,13 +53,28 @@
 
 .page__information{
     grid-area: procesos;
+
 }
 
 .page__container{
     display: grid;
     height: 90vh;
     grid-template-areas: "imagen procesos";
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
     justify-content: center;
     align-items: center;
-    column-gap: 20px;
+    border: 2px solid black;
+    padding: 10vh;
+    column-gap: 50px;
+}
+
+.page__imagen_principal{
+    height: auto;
+    width: 100vh;
+}
+
+.page__container_imagen{
+    display: grid;
+    justify-content: center;
 }

@@ -1,5 +1,6 @@
 document.addEventListener('DOMContentLoaded', function(){
     const boton_prueba = document.getElementById("boton_prueba");
+    const boton_buscar_usuario = document.getElementById("buscar_id");
 
     function new_question(){
         const abdominal = document.getElementById("pregunta_abdominal").value;
@@ -25,6 +26,7 @@ document.addEventListener('DOMContentLoaded', function(){
     }
 
     function new_user(){
+        const Id_usuario = document.getElementById("id_usuario").value;
         const Respuesta_usuario = document.getElementById("respuesta_usuario").value;
         const Respuesta_apellido = document.getElementById("respuesta_apellido").value;
         const Respuesta_abdominal = document.getElementById("respuesta_abdominal").value;
@@ -33,7 +35,9 @@ document.addEventListener('DOMContentLoaded', function(){
         const Respuesta_acidez = document.getElementById("respuesta_acidez").value;
         const Respuesta_vomitos = document.getElementById("respuesta_vomitos").value;
 
+
         const respuestas_preguntas = {
+            Id_usuario: Id_usuario,
             Nombre: Respuesta_usuario,
             Apellido: Respuesta_apellido,
             Respuesta_abdominal: Respuesta_abdominal,
@@ -64,6 +68,25 @@ document.addEventListener('DOMContentLoaded', function(){
     }
 
 
+    function mostrar_respuesta(){
+        buscar_id =  document.getElementById("buscar_id").value;
+        let resultados = document.getElementById("resultados_finales");
+        let parrafo_resultados = document.createElement('p');
+        axios.get('http://localhost:4000/respuesta_sbr/'+buscar_id)
+        .then (function (response){
+            
+            console.log(response.data[0]);
+            parrafo_resultados.innerHTML = response.data[0];
+            resultados.appendChild(parrafo_resultados);
+        })
+        .catch(function(error) {
+            console.log(error);
+        });        
+    }
+
+    boton_resultados.onclick = function(){
+        mostrar_respuesta()
+    }
 
     
     boton_prueba.onclick = function(){
