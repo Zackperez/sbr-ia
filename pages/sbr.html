@@ -110,60 +110,61 @@
                             <div class="row">
                                 <div class="col">
                                     <div class="form-floating mb-3">
-                                        <select class="form-select" id="floatingSelect_abdominal"
+                                        <select class="form-select" id="respuesta_vomitos"
                                             aria-label="Floating label select example">
                                             <option selected disabled value="">Elige una opción</option>
-                                            <option value="1">Si</option>
-                                            <option value="2">No</option>
+                                            <option value="Si">Cero veces</option>
+                                            <option value="No">1 ó mas</option>
                                         </select>
-                                        <label for="floatingSelect">¿Haz tenido dolor abdominal?</label>
+                                        <label for="floatingSelect">¿Cúantas veces haz vomitado esta semana?</label>
                                     </div>
                                 </div>
                                 <div class="col">
                                     <div class="form-floating mb-3">
-                                        <select class="form-select" id="floatingSelect_diarrea"
+                                        <select class="form-select" id="respuesta_abdominal"
                                             aria-label="Floating label select example">
                                             <option selected disabled value="">Elige una opción</option>
-                                            <option value="1">Si</option>
-                                            <option value="2">No</option>
+                                            <option value="Si">Si</option>
+                                            <option value="No">No</option>
                                         </select>
-                                        <label for="floatingSelect">¿Haz tenido diarrea?</label>
+                                        <label for="floatingSelect">¿Haz tenido dolor abdominal?</label>
                                     </div>
-                                </div>
                             </div>
                             <div class="row">
                                 <div class="col">
                                     <div class="form-floating mb-3">
-                                        <select class="form-select" id="floatingSelect_estrenimiento"
+                                        <select class="form-select" id="respuesta_diarrea"
                                             aria-label="Floating label select example">
                                             <option selected disabled value="">Elige una opción</option>
-                                            <option value="1">Si</option>
-                                            <option value="2">No</option>
+                                            <option value="Si">Si</option>
+                                            <option value="No">No</option>
                                         </select>
-                                        <label for="floatingSelect">¿Haz tenido estreñimiento?</label>
+                                        <label for="floatingSelect">¿Haz tenido diarrea?</label>
                                     </div>
+                                </div>
                                 </div>
                                 <div class="col">
                                     <div class="form-floating mb-3">
-                                        <select class="form-select" id="floatingSelect_acidez"
+                                        <select class="form-select" id="respuesta_acidez"
                                             aria-label="Floating label select example">
                                             <option selected disabled value="">Elige una opción</option>
-                                            <option value="1">Si</option>
-                                            <option value="2">No</option>
+                                            <option value="Si">Si</option>
+                                            <option value="No">No</option>
                                         </select>
                                         <label for="floatingSelect">¿Haz tenido acidez?</label>
                                     </div>
                                 </div>
                             </div>
+                            
                             <div class="col">
                                 <div class="form-floating mb-3">
-                                    <select class="form-select" id="floatingSelect_vomitos"
+                                    <select class="form-select" id="respuesta_estrenimiento"
                                         aria-label="Floating label select example">
                                         <option selected disabled value="">Elige una opción</option>
-                                        <option value="1">Cero veces</option>
-                                        <option value="2">1 ó mas</option>
+                                        <option value="Si">Si</option>
+                                        <option value="No">No</option>
                                     </select>
-                                    <label for="floatingSelect">¿Cúantas veces haz vomitado esta semana?</label>
+                                    <label for="floatingSelect">¿Haz tenido estreñimiento?</label>
                                 </div>
                             </div>
 
@@ -171,6 +172,12 @@
                                 <div class="col">
                                     <div class="form-floating mb-3">
                                         <a id="boton_prueba" class="btn btn-primary">Realizar prueba</a>
+                                    </div>
+                                </div>
+
+                                <div class="col">
+                                    <div class="form-floating mb-3">
+                                        <a id="boton_resultados" class="btn btn-primary">Mostrar resultados</a>
                                     </div>
                                 </div>
                             </div>
@@ -198,6 +205,7 @@
 
                 <div id="resultados_finales" class="resultados">
                     <h1>resultados</h1>
+                    <p id="parrafo_resultados"></p>
                 </div>
 
             </div>

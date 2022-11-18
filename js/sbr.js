@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded', function () {
     const boton_prueba = document.getElementById("boton_prueba");
-    const boton_buscar_usuario = document.getElementById("buscar_id");
+    const boton_resultados = document.getElementById("boton_resultados");
+
 
     function new_question() {
         const abdominal = document.getElementById("pregunta_abdominal").value;
@@ -34,7 +35,8 @@ document.addEventListener('DOMContentLoaded', function () {
         const Respuesta_estrenimiento = document.getElementById("respuesta_estrenimiento").value;
         const Respuesta_acidez = document.getElementById("respuesta_acidez").value;
         const Respuesta_vomitos = document.getElementById("respuesta_vomitos").value;
-
+        const resultados = document.getElementById("resultados_finales");
+        const parrafo_resultados = document.getElementById("parrafo_resultados");
 
         const respuestas_preguntas = {
             Id_usuario: Id_usuario,
@@ -46,24 +48,38 @@ document.addEventListener('DOMContentLoaded', function () {
             Respuesta_acidez: Respuesta_acidez,
             Respuesta_vomitos: Respuesta_vomitos
         }
-        let buscar_id = document.getElementById("buscar_id").value
+
         axios({
             method: "POST",
             url: "http://localhost:4000/agregar_usuario_temporal",
             data: respuestas_preguntas,
         })
             .then(res =>
-                console.log(res),
-                axios.get('http://localhost:4000/respuesta_sbr/' + buscar_id)
-                    .then(function (response) {
-                        console.log(response.data[0]);
-                        parrafo_resultados.innerHTML = response.data[0];
-                        resultados.appendChild(parrafo_resultados);
-                    })
-                    .catch(function (error) {
-                        console.log(error);
-                    }))
+                console.log(res))
             .catch(err => console.log('Error:', err))
+    }
+
+    function mostrar_resultados() {
+        const Id_usuario = document.getElementById("id_usuario").value;
+        axios.get('http://localhost:4000/respuesta_sbr/' + Id_usuario)
+            .then(function (response) {
+                console.log(response.data[0]);
+                parrafo_resultados.innerHTML = response.data[0];
+                resultados.appendChild(parrafo_resultados);
+            })
+            .catch(function (error) {
+                console.log(error);
+            });
+    }
+
+    function getAll() {
+        axios.get('http://localhost:4000/get_user_info')
+            .then(function (response) {
+                console.log(response.data[0]);
+            })
+            .catch(function (error) {
+                console.log(error);
+            });
     }
 
     /*     function new_user(){
@@ -99,24 +115,16 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 
-    function getAll() {
-        axios.get('http://localhost:4000/get_user_info')
-            .then(function (response) {
-                console.log(response.data[0]);
-            })
-            .catch(function (error) {
-                console.log(error);
-            });
-    }
+
 
     function mostrar_respuesta() {
-        buscar_id = document.getElementById("buscar_id").value;
+        id_usuario = document.getElementById("id_usuario").value;
         let resultados = document.getElementById("resultados_finales");
         let parrafo_resultados = document.createElement('p');
-        axios.get('http://localhost:4000/respuesta_sbr/' + buscar_id)
+        axios.get('http://localhost:4000/respuesta_sbr/' + id_usuario)
             .then(function (response) {
-                console.log(response.data[0]);
-                parrafo_resultados.innerHTML = response.data[0];
+                console.log(response);
+                parrafo_resultados.innerHTML = response.data[0].Diagnostico_final;
                 resultados.appendChild(parrafo_resultados);
             })
             .catch(function (error) {
@@ -143,10 +151,15 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
     boton_prueba.onclick = function () {
-        /* new_user(); */
+        /* new_user(); 
         var selectedOption = document.getElementById("floatingSelect_vomitos").value;
 
-        console.log(selectedOption);
+        console.log(selectedOption);*/
+        new_user();
+    }
+
+    boton_resultados.onclick = function(){
+        mostrar_respuesta();
     }
 
     /*
