@@ -1,63 +1,35 @@
 document.addEventListener('DOMContentLoaded', function () {
-    //Botones
     const boton_prueba = document.getElementById("boton_prueba");
     const boton_limpiar = document.getElementById("boton_limpiar");
     const boton_resultados = document.getElementById("boton_resultados");
 
-    //Campos del formulario
-    const Id_usuario = document.getElementById("id_usuario");
-    const Respuesta_nombre = document.getElementById("respuesta_nombre");
-    const Respuesta_apellido = document.getElementById("respuesta_apellido");
-    const Respuesta_abdominal = document.getElementById("respuesta_abdominal");
-    const Respuesta_diarrea = document.getElementById("respuesta_diarrea");
-    const Respuesta_estrenimiento = document.getElementById("respuesta_estrenimiento");
-    const Respuesta_acidez = document.getElementById("respuesta_acidez");
-    const Respuesta_vomitos = document.getElementById("respuesta_vomitos");
-
-    function borrar_campos() {
+    function borrar_campos(){
+        const Id_usuario = document.getElementById("id_usuario");
+        const Respuesta_usuario = document.getElementById("respuesta_usuario");
+        const Respuesta_apellido = document.getElementById("respuesta_apellido");
 
         Id_usuario.value = "";
-        Respuesta_nombre.value = "";
+        Respuesta_usuario.value = "";
         Respuesta_apellido.value = "";
-        Id_usuario.classList.remove("is-invalid");
-        Respuesta_nombre.classList.remove("is-invalid");
-        Respuesta_apellido.classList.remove("is-invalid");
-        Respuesta_abdominal.classList.remove("is-invalid");
-        Respuesta_diarrea.classList.remove("is-invalid");
-        Respuesta_estrenimiento.classList.remove("is-invalid");
-        Respuesta_acidez.classList.remove("is-invalid");
-        Respuesta_vomitos.classList.remove("is-invalid");
-
-        Id_usuario.classList.remove("is-valid");
-        Respuesta_nombre.classList.remove("is-valid");
-        Respuesta_apellido.classList.remove("is-valid");
-        Respuesta_abdominal.classList.remove("is-valid");
-        Respuesta_diarrea.classList.remove("is-valid");
-        Respuesta_estrenimiento.classList.remove("is-valid");
-        Respuesta_acidez.classList.remove("is-valid");
-        Respuesta_vomitos.classList.remove("is-valid");
-
+        alert("Campos borrados");
     }
 
-    boton_limpiar.onclick = function () {
+    boton_limpiar.onclick = function() {
         borrar_campos();
     }
 
     function new_user() {
+        const Id_usuario = document.getElementById("id_usuario").value;
+        const Respuesta_usuario = document.getElementById("respuesta_usuario").value;
+        const Respuesta_apellido = document.getElementById("respuesta_apellido").value;
+        const Respuesta_abdominal = document.getElementById("respuesta_abdominal").value;
+        const Respuesta_diarrea = document.getElementById("respuesta_diarrea").value;
+        const Respuesta_estrenimiento = document.getElementById("respuesta_estrenimiento").value;
+        const Respuesta_acidez = document.getElementById("respuesta_acidez").value;
+        const Respuesta_vomitos = document.getElementById("respuesta_vomitos").value;
 
-        !Id_usuario.value.match(/^[0-9]+$/) ? Id_usuario.classList.add("is-invalid") : Id_usuario.classList.remove("is-invalid"); Id_usuario.classList.add("is-valid");
-        !Respuesta_nombre.value.match(/^[a-zA-Z]+$/) ? Respuesta_nombre.classList.add("is-invalid") : Respuesta_nombre.classList.remove("is-invalid"); Respuesta_nombre.classList.add("is-valid");
-        !Respuesta_apellido.value.match(/^[a-zA-Z]+$/) ? Respuesta_apellido.classList.add("is-invalid") : Respuesta_apellido.classList.remove("is-invalid"); Respuesta_apellido.classList.add("is-valid");
-        Respuesta_abdominal.value == "" ? Respuesta_abdominal.classList.add("is-invalid") : Respuesta_abdominal.classList.remove("is-invalid"); Respuesta_abdominal.classList.add("is-valid");
-        Respuesta_diarrea.value == "" ? Respuesta_diarrea.classList.add("is-invalid") : Respuesta_diarrea.classList.remove("is-invalid"); Respuesta_diarrea.classList.add("is-valid");
-        Respuesta_estrenimiento.value == "" ? Respuesta_estrenimiento.classList.add("is-invalid") : Respuesta_estrenimiento.classList.remove("is-invalid"); Respuesta_estrenimiento.classList.add("is-valid");
-        Respuesta_acidez.value == "" ? Respuesta_acidez.classList.add("is-invalid") : Respuesta_acidez.classList.remove("is-invalid"); Respuesta_acidez.classList.add("is-valid");
-        Respuesta_vomitos.value == "" ? Respuesta_vomitos.classList.add("is-invalid") : Respuesta_vomitos.classList.remove("is-invalid"); Respuesta_vomitos.classList.add("is-valid");
-
-
-/* 
-        if () {
-            
+        if ( Id_usuario || Respuesta_usuario || Respuesta_apellido || Respuesta_abdominal || Respuesta_diarrea || Respuesta_estrenimiento || Respuesta_acidez || Respuesta_vomitos == ""){
+            alert("Los campos no pueden estar vacíos");
         }else{
             const respuestas_preguntas = {
                 Id_usuario: Id_usuario,
@@ -70,7 +42,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 Respuesta_vomitos: Respuesta_vomitos
             }
     
-              axios({
+            axios({
                 method: "POST",
                 url: "http://localhost:4000/agregar_usuario_temporal",
                 data: respuestas_preguntas,
@@ -80,7 +52,6 @@ document.addEventListener('DOMContentLoaded', function () {
                 .catch(err => console.log('Error:', err))
         }
 
-        }*/
     }
 
     function mostrar_respuesta() {
@@ -102,7 +73,7 @@ document.addEventListener('DOMContentLoaded', function () {
         new_user();
     }
 
-    boton_resultados.onclick = function () {
+    boton_resultados.onclick = function(){
         mostrar_respuesta();
     }
 
